@@ -808,6 +808,7 @@ function App() {
      position: "fixed",
      bottom: "10px",
      right: "10px",
+     zIndex: 9999,
     }}
    >
     <ToastHeader toggle={toggleToast}>Toast title</ToastHeader>
