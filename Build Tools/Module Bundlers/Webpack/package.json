@@ -1,0 +1,11 @@
+{
+  "name": "learn-webpack",
+  "scripts": {
+    "dev": "webpack --mode development"
+  },
+  "devDependencies": {
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}

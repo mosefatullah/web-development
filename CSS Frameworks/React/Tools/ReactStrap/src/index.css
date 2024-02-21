@@ -1,0 +1,10 @@
+* {
+ box-sizing: border-box;
+ font-family: "Roboto", sans-serif;
+}
+
+h3:not(.remove_this_class_when_copying) {
+ margin-top: 2rem;
+ margin-bottom: 1rem;
+ text-decoration: underline;
+}
