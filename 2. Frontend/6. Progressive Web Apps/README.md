@@ -1,0 +1,2 @@
+## Progressive Web Apps (PWAs)
+Progressive Web Apps are websites that are progressively enhanced to function like installed, native apps on supporting platforms, while functioning like regular websites on other browsers.
