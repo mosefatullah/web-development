@@ -27,3 +27,11 @@ sessionStorage.setItem("name", "Abdullah");
 // Retrieve data
 let name = sessionStorage.getItem("name");
 ```
+
+### Browser Support
+
+The Web Storage API is supported in all modern browsers.
+
+| Chrome | Firefox | Safari | Edge | Opera |
+| ------ | ------- | ------ | ---- | ----- |
+| 4+     | 3.5+    | 4+     | 10+  | 11.5+ |

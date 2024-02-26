@@ -1,31 +1,4 @@
-# Web Worker API
+## Web Workers vs Service Workers
+Service Workers are a type of Web Worker that run in the background and can intercept network requests, cache or retrieve resources, and provide offline support. They are used to provide a better user experience by making web applications more reliable and faster.
 
-The Web Worker API is a simple means for web content to run scripts in background threads. Once created, a worker can send messages to the JavaScript code that created it by posting messages to an event handler specified by that code (and vice versa).
-
-## Usage
-
-### Creating a Worker
-
-```javascript
-// Create a new worker
-const worker = new Worker("worker.js");
-```
-
-### Sending and Receiving Messages
-
-```javascript
-// Send a message to the worker
-worker.postMessage("Hello, worker!");
-
-// Receive a message from the worker
-worker.onmessage = (event) => {
- console.log(event.data);
-};
-```
-
-### Killing a Worker
-
-```javascript
-// Terminate the worker
-worker.terminate();
-```
+Web Workers are used to offload CPU-intensive tasks from the main thread, while Service Workers are used to intercept network requests and provide offline support and push notifications.
