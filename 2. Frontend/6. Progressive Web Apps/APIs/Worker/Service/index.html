@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Worker</title>
+</head>
+
+<body>
+
+  <select>
+    <option value="https://googlechrome.github.io/samples/service-worker/basic/icons/ic_file_upload_black_48dp.png">1</option>
+    <option value="https://googlechrome.github.io/samples/service-worker/basic/icons/ic_folder_black_48dp.png">2</option>
+  </select>
+  <button id="show">Add</button>
+  <div id="container"></div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+
+    document.querySelector('#show').addEventListener('click', () => {
+      const iconUrl = document.querySelector('select').selectedOptions[0].value;
+      let imgElement = document.createElement('img');
+      imgElement.src = iconUrl;
+      document.querySelector('#container').appendChild(imgElement);
+    });
+  </script>
+</body>
+
+</html>
