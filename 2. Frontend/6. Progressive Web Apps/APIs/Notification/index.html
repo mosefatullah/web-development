@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification simple example</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Notification API Demo</h1>
+        <div class="error"></div>
+        <button onclick="askNotificationPermission()">Ask for permission</button>
+    </div>
+    <script>
+        // Function to actually ask the permissions
+        function askNotificationPermission() {
+            function handlePermission(permission) {
+                if (!Reflect.has(Notification, 'permission')) {
+                    Notification.permission = permission;
+                }
+                if (Notification.permission === 'denied' || Notification.permission === 'default') {
+                    window.alert('You blocked the notifications!');
+                }
+            };
+
+            if (!Reflect.has(window, 'Notification')) {
+                console.log('This browser does not support notifications.');
+            } else {
+                Notification.requestPermission().then(handlePermission);
+            }
+        }
+
+        // create and show the notification
+        const showNotification = () => {
+            // create a new notification
+            const notification = new Notification('New message from Localhost', {
+                body: 'Hey! You have a new message.',
+                icon: 'https://www.javascripttutorial.net/wp-content/uploads/2020/02/favicon-300x300.png'
+            });
+
+            // close the notification after 10 seconds
+            setTimeout(() => {
+                notification.close();
+            }, 10 * 1000);
+
+            // navigate to a URL when clicked
+            notification.addEventListener('click', () => {
+                window.open('https://www.javascripttutorial.net/web-apis/javascript-notification/', '_blank');
+            });
+        }
+
+        // show an error message
+        const showError = () => {
+            const error = document.querySelector('.error');
+            error.style.display = 'block';
+            error.textContent = 'You blocked the notifications';
+        }
+
+        // check notification permission
+        let granted = false;
+
+        if (Notification.permission === 'granted') {
+            granted = true;
+        } else if (Notification.permission !== 'denied') {
+            let permission = Notification.requestPermission();
+            granted = permission === 'granted' ? true : false;
+        }
+
+        // show notification or error
+        granted ? showNotification() : showError();
+    </script>
+</body>
+
+</html>
