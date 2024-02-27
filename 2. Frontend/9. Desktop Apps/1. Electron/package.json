@@ -1,0 +1,17 @@
+{
+  "name": "learning-electron",
+  "version": "1.0.0",
+  "description": "Learning how to build desktop applications using Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electromon ."
+  },
+  "keywords": [],
+  "author": "Mohammad Sefatullah",
+  "license": "MIT",
+  "devDependencies": {
+    "electromon": "^1.0.10",
+    "electron": "^29.0.1"
+  }
+}
