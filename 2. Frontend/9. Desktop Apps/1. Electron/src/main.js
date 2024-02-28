@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron/main");
+const { app, BrowserWindow } = require("electron");
 const path = require("node:path");
 
 function createWindow() {
@@ -10,6 +10,7 @@ function createWindow() {
   },
  });
 
+ win.setMinimumSize(400, 300);
  win.loadFile("index.html");
 }
 
